@@ -1,0 +1,114 @@
+---
+title: "The Good, the Bad, and the Ugly (Charts)"
+author: "CM Burch"
+date: "2/19/2020"
+output: 
+  powerpoint_presentation
+---
+
+```{r setup, include=FALSE, message=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE)
+library(dplyr)
+library(ggplot2)
+library(gridExtra)
+library(ggthemes)
+```
+
+# On Visualization
+
+## What Is It?
+*Data Visualization* is the graphic display of structured or unstructured data in order to convey information.  
+
+Some examples:
+```{r chart-examples}
+ex_dist <- ggplot(data = diamonds, 
+                  aes(x = price, group = cut, fill = cut)) +
+  geom_density(adjust = 1.5, alpha = 0.5) + 
+  theme_tufte()
+
+ex_grouped_bar <- diamonds %>%
+  ggplot(aes(x = cut)) +
+  geom_bar(stat = "count", fill = "lightblue", col = "black") +
+  theme_tufte()
+
+ex_line <- data.frame(
+  Month = factor(c("Jan", "Feb", "Mar", "Apr", "May", "Jun")),
+  Vehicles = c(125, 126, 115, 127, 131, 133)
+) %>%
+  ggplot(aes(x = Month, y = Vehicles, group = 1)) +
+  geom_point(fill = "blue") +
+  geom_line(col = "black") +
+  theme_tufte
+
+
+grid.arrange(ex_dist, ex_grouped_bar, 
+             ex_line, nrow = 2)
+```
+
+## For Example
+```{r rock-and-roll}
+df <- data.frame(material = c("rock", "roll"),
+                 amount = c(1, 1),
+                 mid = c(0.5, 1.5))
+df %>%
+  ggplot(aes(x = "", y = amount, fill = material)) +
+  geom_bar(width = 1, stat = "identity", col = "white") +
+  geom_text(x = 1, aes(y = mid, label = material),
+            col = "white", size = 8) +
+  coord_polar(theta = "y", start = pi) +
+  theme_void() +
+  scale_fill_manual(values = c("#88B8F5", "#49B76E")) +
+  guides(fill = FALSE) +
+  labs(title = "things on which this city was built",
+       caption = "Source: Starship (1985)") +
+  theme(plot.title = element_text(size = 18,
+                                  face = "bold",
+                                  hjust = 0.5, 
+                                  vjust = -1),
+        plot.caption = element_text(size = 10,
+                                    hjust = 1,
+                                    vjust = 5))
+```
+
+
+
+## Why Do We Care About Junk Charts?
+
+## How To Identify Junk Charts
+
+# The Culprits
+
+## The Good
+
+## The Bad
+
+## The Ugly
+
+## Elements of Data Analytic Style
+Less is More  
+Colors encode data differences  
+
+
+## Some Common Mistakes and How to Fix Them
+
+### Pie Charts
+Pie chart problems  
+[Pie chart conventions](https://junkcharts.typepad.com/junk_charts/2020/02/pie-chart-conventions.html)
+
+## 
+
+## Slide with R Output
+
+```{r cars, echo = TRUE}
+```
+
+## References
+
+- Fung, Kaiser. (2020)[1]. The Unspoken Rules of Visualisation (and when to break them). DataJournalism. https://datajournalism.com/read/longreads/the-unspoken-rules-of-visualisation-and-when-to-break-them
+- Fung, Kaiser. (2020)[2]. Junk Charts: Recycling Chartjunk as Junk Art.
+https://junkcharts.typepad.com
+- Harris, Robert L. (1999). Information Graphics: A Comprehensive Illustrated Reference. USA: Oxford University Press. ISBN 0-19-513532-6.
+- Leek, Jeff. (2014). The Elements of Data Analytic Style: A guide for people who want to analyze data. 
+- Tufte, Edward R. (1983). The Visual Display of Quantitative Information. Cheshire, CT: Graphics Press.
+- Tufte, Edward R. (2006). Beautiful Evidence. Cheshire, CT: Graphics Press.  ISBN 978-0961392178.
+- Wilke, Claus O. (2019). Fundamentals of Data Visualization: A Primer on Making Informative and Compelling Figures. Sebastopol, CA: O'Reilly Media, Inc. ISBN 978-1-492-03108-6
