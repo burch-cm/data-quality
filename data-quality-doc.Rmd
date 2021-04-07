@@ -1,0 +1,67 @@
+---
+title: "The Good, the Bad, and the Ugly (Charts)"
+author: "CM Burch"
+date: "2/19/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Why Do We Make Charts?  
+
+Charts convey7 information quickly.
+
+[INFORMS](https://www.informs.org) lists five manageable tasks for data analytics:  
+1. choosing the business problem on which to focus
+2. assembling the team
+3. acquiring and preparing the data
+4. selecting and applying the analytic tools
+5. executing to produce an actionable result  
+
+The final point - producing an actionable result - implies effective communication of the analysis results to decision makers. *The best analysis in the world is useless unless the people who need to know about it actually know about it.*  
+
+Part of the way we communicate data analysis is through visualizations, which includes charts, graphs, dashboards, etc. Visualizations, when done well, can convey large amounts of complex information quickly. When done poorly, however, visulaizations can confuse and confound communication.
+
+## Why Do We Care About Junk Charts?  
+
+
+
+## How To Identify Junk Charts
+
+## The Good
+
+## The Bad
+
+## The Ugly
+
+## Elements of Data Analytic Style
+Less is More  
+Colors encode data differences  
+
+
+## Some Common Mistakes and How to Fix Them
+
+## Pie Charts
+Pie chart problems  
+[Pie chart conventions](https://junkcharts.typepad.com/junk_charts/2020/02/pie-chart-conventions.html)
+
+## 
+
+## Slide with R Output
+
+```{r cars, echo = TRUE}
+summary(cars)
+```
+
+## References
+
+- Fung, Kaiser. (2020)[1]. The Unspoken Rules of Visualisation (and when to break them). DataJournalism. https://datajournalism.com/read/longreads/the-unspoken-rules-of-visualisation-and-when-to-break-them
+- Fung, Kaiser. (2020)[2]. Junk Charts: Recycling Chartjunk as Junk Art.
+https://junkcharts.typepad.com
+- Harris, Robert L. (1999). Information Graphics: A Comprehensive Illustrated Reference. USA: Oxford University Press. ISBN 0-19-513532-6.
+- Leek, Jeff. (2014). The Elements of Data Analytic Style: A guide for people who want to analyze data. 
+- Tufte, Edward R. (1983). The Visual Display of Quantitative Information. Cheshire, CT: Graphics Press.
+- Tufte, Edward R. (2006). Beautiful Evidence. Cheshire, CT: Graphics Press.  ISBN 978-0961392178.
+- Wilke, Claus O. (2019). Fundamentals of Data Visualization: A Primer on Making Informative and Compelling Figures. Sebastopol, CA: O'Reilly Media, Inc. ISBN 978-1-492-03108-6
